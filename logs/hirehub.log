@@ -1,0 +1,69 @@
+2025-11-07 14:39:11,582 | INFO    | <module> | Starting HireHub (upgraded)
+2025-11-07 14:39:11,680 | INFO    | <module> | Connected to MySQL successfully
+2025-11-07 14:39:30,008 | ERROR   | <module> | Unhandled exception in main: 1146 (42S02): Table 'hirehub.hirehub_dataset' doesn't exist
+Traceback (most recent call last):
+  File "C:\Users\liu\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+    ~~~~~~~~~~~~~~~~~~^
+        query,
+        ^^^^^^
+    ...<3 lines>...
+        query_attrs=self.query_attrs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+_mysql_connector.MySQLInterfaceError: Table 'hirehub.hirehub_dataset' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\liu\Documents\python\project\main.py", line 443, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\liu\Documents\python\project\main.py", line 427, in main
+    candidate_management_menu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\liu\Documents\python\project\main.py", line 347, in candidate_management_menu
+    cursor.execute(q, (like, like, like))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liu\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._stmt_partition["mappable_stmt"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        raw_as_string=self._raw_as_string,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\liu\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\liu\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+        err.errno, msg=err.msg, sqlstate=err.sqlstate
+    ) from err
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'hirehub.hirehub_dataset' doesn't exist
+2025-11-07 14:41:55,365 | INFO    | <module> | Starting HireHub (upgraded)
+2025-11-07 14:41:55,487 | INFO    | <module> | Connected to MySQL successfully
+2025-11-07 14:42:04,095 | INFO    | candidate_management_menu | Quick search for 'karun' returned 0 rows
+2025-11-07 14:42:24,217 | INFO    | candidate_management_menu | Quick search for 'karan' returned 20 rows
+2025-11-07 14:43:22,617 | INFO    | <module> | Interrupted by user (KeyboardInterrupt)
+2025-11-07 14:43:25,460 | INFO    | <module> | Starting HireHub (upgraded)
+2025-11-07 14:43:25,583 | INFO    | <module> | Connected to MySQL successfully
+2025-11-07 14:44:10,759 | DEBUG   | fetch_filtered | Filter query: SELECT name, skills, college, degree, field, company, position FROM hirehubdata_cleaned WHERE field LIKE '%Electronics%' AND college LIKE '%NIT%'
+2025-11-07 14:44:10,769 | INFO    | data_insights_menu | Filter action produced 3 rows
+2025-11-07 14:45:15,126 | DEBUG   | fetch_all | Fetched all rows from DB
+2025-11-07 14:45:55,360 | INFO    | stats_dashboard | Displayed statistics dashboard
+2025-11-07 14:46:09,676 | DEBUG   | fetch_all | Fetched all rows from DB
+2025-11-07 14:46:09,686 | INFO    | export_df | Exported CSV: hirehub_export.csv
+2025-11-07 14:46:09,690 | WARNING | export_df | Excel export failed (openpyxl missing?). CSV is available. No module named 'openpyxl'
+2025-11-07 14:46:39,920 | DEBUG   | fetch_all | Fetched all rows from DB
+2025-11-07 14:46:44,314 | INFO    | sort_dataframe | Sorted by name
+2025-11-07 14:48:02,514 | INFO    | <module> | Starting HireHub (upgraded)
+2025-11-07 14:48:02,577 | INFO    | <module> | Connected to MySQL successfully
+2025-11-07 14:48:18,139 | DEBUG   | fetch_filtered | Filter query: SELECT name, skills, college, degree, field, company, position FROM hirehubdata_cleaned WHERE field LIKE '%Computer%'
+2025-11-07 14:48:18,222 | INFO    | data_insights_menu | Filter action produced 116 rows
+2025-11-07 14:53:05,946 | DEBUG   | fetch_all | Fetched all rows from DB
+2025-11-07 14:53:08,145 | INFO    | sort_dataframe | Sorted by name
+2025-11-07 14:55:27,118 | INFO    | <module> | Interrupted by user (KeyboardInterrupt)
+2025-11-07 14:55:48,860 | INFO    | <module> | Interrupted by user (KeyboardInterrupt)
